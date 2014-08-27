@@ -16,7 +16,10 @@ function fond_commerce_default_page_manager_pages() {
   $page->admin_title = 'Jeg vil bidrage';
   $page->admin_description = '';
   $page->path = 'bidrag';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array(
     'type' => 'normal',
     'title' => 'Jeg vil bidrage',
