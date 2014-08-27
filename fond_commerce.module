@@ -5,3 +5,20 @@
  */
 
 include_once 'fond_commerce.features.inc';
+
+/**
+ * Implements hook_migrate_api().
+ */
+function fond_commerce_migrate_api() {
+  $api = array(
+    'api' => 2,
+    'migrations' => array(
+      'FondProduct' => array('class_name' => 'FondProduct'),
+      'FondProductNode' => array('class_name' => 'FondProductNode'),
+      'FondDonationProduct' => array('class_name' => 'FondDonationProduct'),
+      'FondDonationNode' => array('class_name' => 'FondDonationNode'),
+    ),
+  );
+
+  return $api;
+}
