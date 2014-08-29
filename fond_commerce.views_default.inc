@@ -85,7 +85,7 @@ function fond_commerce_views_default_views() {
   $handler->display->display_options['fields']['commerce_order_total']['settings'] = array(
     'calculation' => FALSE,
   );
-  /* Field: Broken/missing handler */
+  /* Field: Commerce Order: Order Balance */
   $handler->display->display_options['fields']['balance']['id'] = 'balance';
   $handler->display->display_options['fields']['balance']['table'] = 'commerce_order';
   $handler->display->display_options['fields']['balance']['field'] = 'balance';
@@ -95,6 +95,14 @@ function fond_commerce_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'commerce_order' => 'commerce_order',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Commerce Order: Order status */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'commerce_order';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = array(
+    'completed' => 'completed',
   );
 
   /* Display: Data export */
@@ -110,7 +118,7 @@ function fond_commerce_views_default_views() {
   $handler->display->display_options['style_options']['replace_newlines'] = 0;
   $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['style_options']['keep_html'] = 0;
-  $handler->display->display_options['path'] = 'admin/commerce/orders/export';
+  $handler->display->display_options['path'] = 'admin/commerce/orders/export.csv';
   $handler->display->display_options['segment_size'] = '100';
   $translatables['bidragsliste'] = array(
     t('Master'),
@@ -132,7 +140,7 @@ function fond_commerce_views_default_views() {
     t('Adresse'),
     t('CPR-nummer'),
     t('Ordretotal'),
-    t('Broken handler commerce_order.balance'),
+    t('Order Balance'),
     t('Data export'),
     t('more'),
   );
