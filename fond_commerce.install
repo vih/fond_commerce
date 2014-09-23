@@ -1,0 +1,11 @@
+<?php
+
+/**
+* Implements hook_update_N().
+* Disables commerce_checkout_order_status_update.
+*/
+function fond_commerce_update_7000() {
+  $rules_config = rules_config_load('commerce_checkout_order_status_update');
+  $rules_config->active = FALSE;
+  $rules_config->save();
+}
