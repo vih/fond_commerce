@@ -58,14 +58,7 @@ function fond_commerce_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_cpr_nummer',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
+    'foreign keys' => array(),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -87,14 +80,7 @@ function fond_commerce_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_product',
-    'foreign keys' => array(
-      'product_id' => array(
-        'columns' => array(
-          'product_id' => 'product_id',
-        ),
-        'table' => 'commerce_product',
-      ),
-    ),
+    'foreign keys' => array(),
     'indexes' => array(
       'product_id' => array(
         0 => 'product_id',
@@ -116,14 +102,7 @@ function fond_commerce_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_product_image',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
+    'foreign keys' => array(),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
