@@ -1,11 +1,37 @@
 <?php
+/**
+ * @file
+ */
 
 /**
-* Implements hook_update_N().
-* Disables commerce_checkout_order_status_update.
-*/
+ * Implements hook_uninstall.
+ */
+function fond_commerce_uninstall() {
+  variable_del('commerce_customer_profile_billing_addressbook');
+}
+
+/**
+ * Implements hook_uninstall.
+ */
+function fond_commerce_install() {
+  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array('access checkout'));
+  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('access checkout'));
+}
+
+/**
+ * Implements hook_update_N().
+ * Disables commerce_checkout_order_status_update.
+ */
 function fond_commerce_update_7000() {
   $rules_config = rules_config_load('commerce_checkout_order_status_update');
   $rules_config->active = FALSE;
   $rules_config->save();
+}
+
+/**
+ * Implements hook_update_N().
+ * Enable Address book and enable for Billing Profile.
+ */
+function fond_commerce_update_7001() {
+  variable_set('commerce_customer_profile_billing_addressbook', TRUE);
 }
