@@ -1,7 +1,7 @@
 name = Fond Commerce
 description = Commerce integration for the fund.
 core = 7.x
-package = Fond
+package = VIH Fond
 version = 7.x-1.0
 project = fond_commerce
 dependencies[] = commerce_addressbook
