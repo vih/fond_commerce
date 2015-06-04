@@ -67,6 +67,7 @@ function fond_commerce_field_default_field_instances() {
     'widget' => array(
       'module' => 'addressfield',
       'settings' => array(
+        'default_country' => 'site_default',
         'available_countries' => array(),
         'format_handlers' => array(
           0 => 'address',
@@ -83,7 +84,7 @@ function fond_commerce_field_default_field_instances() {
     'bundle' => 'billing',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'CPR-nummeret er nødvendigt indtil fonden er etableret. Derefter sletter vi alle CPR-numre.',
+    'description' => 'To get a tax deduction, we need to report your SSN-number to the tax authorities.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -445,7 +446,7 @@ function fond_commerce_field_default_field_instances() {
   t('Billede');
   t('Body');
   t('CPR-nummer');
-  t('CPR-nummeret er nødvendigt indtil fonden er etableret. Derefter sletter vi alle CPR-numre.');
+  t('To get a tax deduction, we need to report your SSN-number to the tax authorities.');
   t('Price');
   t('Product');
 
