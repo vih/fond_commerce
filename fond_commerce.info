@@ -6,6 +6,7 @@ version = 7.x-1.0
 project = fond_commerce
 dependencies[] = commerce_addressbook
 dependencies[] = commerce_cart
+dependencies[] = commerce_cart_expiration
 dependencies[] = commerce_customer_ui
 dependencies[] = commerce_donate
 dependencies[] = commerce_features
