@@ -6,8 +6,8 @@
 
 class FondProduct extends Migration {
 
-  public function __construct() {
-    parent::__construct();
+  public function __construct($arguments = array()) {
+    parent::__construct($arguments);
     $this->description = t('Import products from CSV file.');
 
     // Create a map object for tracking the relationships between source rows
@@ -47,7 +47,7 @@ class FondProduct extends Migration {
     $columns[1] = array('sku', 'SKU');
     $columns[2] = array('price', 'Price');
     $columns[3] = array('image', 'Image');
-    
+
     return $columns;
   }
 
@@ -59,8 +59,8 @@ class FondProduct extends Migration {
 
 class FondProductNode extends Migration {
 
-  public function __construct() {
-    parent::__construct();
+  public function __construct($arguments = array()) {
+    parent::__construct($arguments);
     $this->description = t('Import product nodes.');
     $this->dependencies = array('FondProduct');
 
@@ -114,8 +114,8 @@ class FondProductNode extends Migration {
 
 class FondDonationProduct extends Migration {
 
-  public function __construct() {
-    parent::__construct();
+  public function __construct($arguments = array()) {
+    parent::__construct($arguments);
     $this->description = t('Import donations from CSV file.');
 
     // Create a map object for tracking the relationships between source rows
@@ -158,8 +158,8 @@ class FondDonationProduct extends Migration {
 
 class FondDonationNode extends Migration {
 
-  public function __construct() {
-    parent::__construct();
+  public function __construct($arguments = array()) {
+    parent::__construct($arguments);
     $this->description = t('Import product nodes.');
     $this->dependencies = array('FondDonationProduct');
 
