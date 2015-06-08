@@ -57,6 +57,7 @@ features[field_instance][] = node-produkt-field_product
 features[node][] = produkt
 features[page_manager_pages][] = jeg_vil_bidrage
 features[panelizer_defaults][] = node:donation:default
+features[rules_config][] = fond_commerce_update_the_order_status_when_paid_in_full
 features[rules_config][] = rules_checkout_when_adding_product_to_cart
 features[variable][] = field_bundle_settings_node__produkt
 features[variable][] = language_content_type_produkt
