@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file
+ * fond_commerce.rules_defaults.inc
+ */
 
 /**
  * Implements hook_default_rules_configuration().

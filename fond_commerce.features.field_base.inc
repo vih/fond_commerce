@@ -19,7 +19,6 @@ function fond_commerce_field_default_field_bases() {
       0 => 'commerce_customer_profile',
     ),
     'field_name' => 'commerce_customer_address',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'addressfield',
@@ -37,7 +36,6 @@ function fond_commerce_field_default_field_bases() {
       0 => 'commerce_product',
     ),
     'field_name' => 'commerce_price',
-    'foreign keys' => array(),
     'indexes' => array(
       'currency_price' => array(
         0 => 'amount',
@@ -58,7 +56,6 @@ function fond_commerce_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_cpr_nummer',
-    'foreign keys' => array(),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -80,7 +77,6 @@ function fond_commerce_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_product',
-    'foreign keys' => array(),
     'indexes' => array(
       'product_id' => array(
         0 => 'product_id',
@@ -102,7 +98,6 @@ function fond_commerce_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_product_image',
-    'foreign keys' => array(),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',

@@ -30,6 +30,7 @@ dependencies[] = page_manager
 dependencies[] = panelizer
 dependencies[] = panopoly_pages
 dependencies[] = radix_layouts
+dependencies[] = radix_views
 dependencies[] = rules
 dependencies[] = strongarm
 dependencies[] = text

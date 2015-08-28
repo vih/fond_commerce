@@ -11,88 +11,11 @@ function fond_commerce_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'order_count';
-  $view->description = '';
-  $view->tag = 'default';
-  $view->base_table = 'commerce_order';
-  $view->human_name = 'Order count';
-  $view->core = 7;
-  $view->api_version = '3.0';
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
-
-  /* Display: Master */
-  $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'mere';
-  $handler->display->display_options['group_by'] = TRUE;
-  $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'time';
-  $handler->display->display_options['cache']['results_lifespan'] = '1800';
-  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
-  $handler->display->display_options['cache']['output_lifespan'] = '1800';
-  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['query']['options']['disable_sql_rewrite'] = TRUE;
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Udfør';
-  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Gendan';
-  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortér efter';
-  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
-  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
-  $handler->display->display_options['pager']['type'] = 'none';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: COUNT(Commerce Order: Order number) */
-  $handler->display->display_options['fields']['order_number']['id'] = 'order_number';
-  $handler->display->display_options['fields']['order_number']['table'] = 'commerce_order';
-  $handler->display->display_options['fields']['order_number']['field'] = 'order_number';
-  $handler->display->display_options['fields']['order_number']['group_type'] = 'count';
-  $handler->display->display_options['fields']['order_number']['label'] = '';
-  $handler->display->display_options['fields']['order_number']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['order_number']['alter']['text'] = '[order_number] bidrag af de nødvendige 100 inden 15. september er allerede lavet. <a href="/bidrag">Giv dit bidrag</a>.';
-  $handler->display->display_options['fields']['order_number']['element_type'] = 'h1';
-  $handler->display->display_options['fields']['order_number']['element_label_colon'] = FALSE;
-  /* Filter criterion: Commerce Order: Order type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'commerce_order';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'commerce_order' => 'commerce_order',
-  );
-  /* Filter criterion: Commerce Order: Order status */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'commerce_order';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = array(
-    'pending' => 'pending',
-    'processing' => 'processing',
-    'completed' => 'completed',
-  );
-
-  /* Display: Content pane */
-  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
-  $translatables['order_count'] = array(
-    t('Master'),
-    t('mere'),
-    t('Udfør'),
-    t('Gendan'),
-    t('Sortér efter'),
-    t('Stigende'),
-    t('Faldende'),
-    t('[order_number] bidrag af de nødvendige 100 inden 15. september er allerede lavet. <a href="/bidrag">Giv dit bidrag</a>.'),
-    t('Content pane'),
-    t('more'),
-    t('View panes'),
-  );
-  $export['order_count'] = $view;
-
-  $view = new view();
   $view->name = 'produkter';
   $view->description = '';
-  $view->tag = 'default';
+  $view->tag = 'VIH Fond';
   $view->base_table = 'node';
-  $view->human_name = 'Produkter';
+  $view->human_name = 'Products';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -116,6 +39,10 @@ function fond_commerce_views_default_views() {
   $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
   $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
   $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '50';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Antal elementer';
   $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
   $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Forskydning';
@@ -123,10 +50,9 @@ function fond_commerce_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ forrige';
   $handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
-  $handler->display->display_options['style_plugin'] = 'responsive_grid';
-  $handler->display->display_options['style_options']['columns'] = '3';
-  $handler->display->display_options['style_options']['column_classes'] = 'views-column span4';
-  $handler->display->display_options['style_options']['row_classes'] = 'views-row row-fluid';
+  $handler->display->display_options['style_plugin'] = 'radix_views_grid_plugin_style';
+  $handler->display->display_options['style_options']['views_group_col_class'] = 'c';
+  $handler->display->display_options['style_options']['views_row_col_class'] = 'col-lg-4 col-md-6 col-sm-12';
   $handler->display->display_options['row_plugin'] = 'entity';
   $handler->display->display_options['row_options']['view_mode'] = 'teaser';
   /* Relationship: Content: Referenced products */
@@ -177,6 +103,15 @@ function fond_commerce_views_default_views() {
 
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
   $translatables['produkter'] = array(
     t('Master'),
     t('mere'),
@@ -198,172 +133,6 @@ function fond_commerce_views_default_views() {
     t('View panes'),
   );
   $export['produkter'] = $view;
-
-  $view = new view();
-  $view->name = 'samlet_bel_b';
-  $view->description = '';
-  $view->tag = 'default';
-  $view->base_table = 'commerce_order';
-  $view->human_name = 'Samlet beløb';
-  $view->core = 7;
-  $view->api_version = '3.0';
-  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
-
-  /* Display: Master */
-  $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'mere';
-  $handler->display->display_options['group_by'] = TRUE;
-  $handler->display->display_options['access']['type'] = 'none';
-  $handler->display->display_options['cache']['type'] = 'time';
-  $handler->display->display_options['cache']['results_lifespan'] = '1800';
-  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
-  $handler->display->display_options['cache']['output_lifespan'] = '1800';
-  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
-  $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['query']['options']['disable_sql_rewrite'] = TRUE;
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Udfør';
-  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Gendan';
-  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortér efter';
-  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
-  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Antal elementer';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
-  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Forskydning';
-  $handler->display->display_options['pager']['options']['tags']['first'] = '« første';
-  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ forrige';
-  $handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
-  $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: MAX(Commerce Order: Order total) */
-  $handler->display->display_options['fields']['commerce_order_total']['id'] = 'commerce_order_total';
-  $handler->display->display_options['fields']['commerce_order_total']['table'] = 'field_data_commerce_order_total';
-  $handler->display->display_options['fields']['commerce_order_total']['field'] = 'commerce_order_total';
-  $handler->display->display_options['fields']['commerce_order_total']['group_type'] = 'max';
-  $handler->display->display_options['fields']['commerce_order_total']['label'] = '';
-  $handler->display->display_options['fields']['commerce_order_total']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['commerce_order_total']['alter']['text'] = 'Det største beløb, der er blevet doneret er [commerce_order_total]? <a href="/bidrag">Kan du slå den</a>?';
-  $handler->display->display_options['fields']['commerce_order_total']['element_type'] = 'h1';
-  $handler->display->display_options['fields']['commerce_order_total']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['commerce_order_total']['click_sort_column'] = 'amount';
-  $handler->display->display_options['fields']['commerce_order_total']['settings'] = array(
-    'calculation' => FALSE,
-  );
-  $handler->display->display_options['fields']['commerce_order_total']['group_column'] = 'amount';
-  $handler->display->display_options['fields']['commerce_order_total']['group_columns'] = array(
-    'amount' => 'amount',
-  );
-  /* Filter criterion: Commerce Order: Order type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'commerce_order';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'commerce_order' => 'commerce_order',
-  );
-  /* Filter criterion: Commerce Order: Order status */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'commerce_order';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = array(
-    'pending' => 'pending',
-    'processing' => 'processing',
-    'completed' => 'completed',
-  );
-
-  /* Display: Content pane */
-  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: AVG(Commerce Order: Order total) */
-  $handler->display->display_options['fields']['commerce_order_total']['id'] = 'commerce_order_total';
-  $handler->display->display_options['fields']['commerce_order_total']['table'] = 'field_data_commerce_order_total';
-  $handler->display->display_options['fields']['commerce_order_total']['field'] = 'commerce_order_total';
-  $handler->display->display_options['fields']['commerce_order_total']['group_type'] = 'avg';
-  $handler->display->display_options['fields']['commerce_order_total']['label'] = '';
-  $handler->display->display_options['fields']['commerce_order_total']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['commerce_order_total']['alter']['text'] = 'Der er i gennemsnit doneret [commerce_order_total]. Vores mål er at samle 50.000 kroner inden jul. <a href="/bidrag">Vil du bidrage</a>?';
-  $handler->display->display_options['fields']['commerce_order_total']['element_type'] = 'h1';
-  $handler->display->display_options['fields']['commerce_order_total']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['commerce_order_total']['click_sort_column'] = 'amount';
-  $handler->display->display_options['fields']['commerce_order_total']['settings'] = array(
-    'calculation' => FALSE,
-  );
-  $handler->display->display_options['fields']['commerce_order_total']['group_column'] = 'amount';
-  $handler->display->display_options['fields']['commerce_order_total']['group_columns'] = array(
-    'amount' => 'amount',
-  );
-
-  /* Display: Content pane 2 */
-  $handler = $view->new_display('panel_pane', 'Content pane 2', 'panel_pane_2');
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: SUM(Commerce Order: Order total) */
-  $handler->display->display_options['fields']['commerce_order_total']['id'] = 'commerce_order_total';
-  $handler->display->display_options['fields']['commerce_order_total']['table'] = 'field_data_commerce_order_total';
-  $handler->display->display_options['fields']['commerce_order_total']['field'] = 'commerce_order_total';
-  $handler->display->display_options['fields']['commerce_order_total']['group_type'] = 'sum';
-  $handler->display->display_options['fields']['commerce_order_total']['label'] = '';
-  $handler->display->display_options['fields']['commerce_order_total']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['commerce_order_total']['alter']['text'] = 'Der er nu doneret [commerce_order_total]. Vores mål er 50.000 kroner inden jul? <a href="/bidrag">Vil du hjælpe</a>?';
-  $handler->display->display_options['fields']['commerce_order_total']['element_type'] = 'strong';
-  $handler->display->display_options['fields']['commerce_order_total']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['commerce_order_total']['click_sort_column'] = 'amount';
-  $handler->display->display_options['fields']['commerce_order_total']['settings'] = array(
-    'calculation' => FALSE,
-  );
-  $handler->display->display_options['fields']['commerce_order_total']['group_column'] = 'amount';
-  $handler->display->display_options['fields']['commerce_order_total']['group_columns'] = array(
-    'amount' => 'amount',
-  );
-
-  /* Display: Content pane 3 */
-  $handler = $view->new_display('panel_pane', 'Content pane 3', 'panel_pane_3');
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: MAX(Commerce Order: Order total) */
-  $handler->display->display_options['fields']['commerce_order_total']['id'] = 'commerce_order_total';
-  $handler->display->display_options['fields']['commerce_order_total']['table'] = 'field_data_commerce_order_total';
-  $handler->display->display_options['fields']['commerce_order_total']['field'] = 'commerce_order_total';
-  $handler->display->display_options['fields']['commerce_order_total']['group_type'] = 'max';
-  $handler->display->display_options['fields']['commerce_order_total']['label'] = '';
-  $handler->display->display_options['fields']['commerce_order_total']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['commerce_order_total']['alter']['text'] = 'Det største enkeltbidrag er [commerce_order_total]. Vores mål er samle 50.000 kroner inden jul. <a href="/bidrag">Vil du bidrage</a>?';
-  $handler->display->display_options['fields']['commerce_order_total']['element_type'] = 'h1';
-  $handler->display->display_options['fields']['commerce_order_total']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['commerce_order_total']['click_sort_column'] = 'amount';
-  $handler->display->display_options['fields']['commerce_order_total']['settings'] = array(
-    'calculation' => FALSE,
-  );
-  $handler->display->display_options['fields']['commerce_order_total']['group_column'] = 'amount';
-  $handler->display->display_options['fields']['commerce_order_total']['group_columns'] = array(
-    'amount' => 'amount',
-  );
-  $translatables['samlet_bel_b'] = array(
-    t('Master'),
-    t('mere'),
-    t('Udfør'),
-    t('Gendan'),
-    t('Sortér efter'),
-    t('Stigende'),
-    t('Faldende'),
-    t('Antal elementer'),
-    t('- Alle -'),
-    t('Forskydning'),
-    t('« første'),
-    t('‹ forrige'),
-    t('næste ›'),
-    t('sidste »'),
-    t('Det største beløb, der er blevet doneret er [commerce_order_total]? <a href="/bidrag">Kan du slå den</a>?'),
-    t('Content pane'),
-    t('more'),
-    t('Der er i gennemsnit doneret [commerce_order_total]. Vores mål er at samle 50.000 kroner inden jul. <a href="/bidrag">Vil du bidrage</a>?'),
-    t('View panes'),
-    t('Content pane 2'),
-    t('Der er nu doneret [commerce_order_total]. Vores mål er 50.000 kroner inden jul? <a href="/bidrag">Vil du hjælpe</a>?'),
-    t('Content pane 3'),
-    t('Det største enkeltbidrag er [commerce_order_total]. Vores mål er samle 50.000 kroner inden jul. <a href="/bidrag">Vil du bidrage</a>?'),
-  );
-  $export['samlet_bel_b'] = $view;
 
   return $export;
 }

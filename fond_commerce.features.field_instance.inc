@@ -10,7 +10,8 @@
 function fond_commerce_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'commerce_customer_profile-billing-commerce_customer_address'
+  // Exported field_instance:
+  // 'commerce_customer_profile-billing-commerce_customer_address'
   $field_instances['commerce_customer_profile-billing-commerce_customer_address'] = array(
     'bundle' => 'billing',
     'default_value' => NULL,
@@ -67,8 +68,8 @@ function fond_commerce_field_default_field_instances() {
     'widget' => array(
       'module' => 'addressfield',
       'settings' => array(
-        'default_country' => 'site_default',
         'available_countries' => array(),
+        'default_country' => 'site_default',
         'format_handlers' => array(
           0 => 'address',
           1 => 'name-oneline',
@@ -79,7 +80,8 @@ function fond_commerce_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'commerce_customer_profile-billing-field_cpr_nummer'
+  // Exported field_instance:
+  // 'commerce_customer_profile-billing-field_cpr_nummer'
   $field_instances['commerce_customer_profile-billing-field_cpr_nummer'] = array(
     'bundle' => 'billing',
     'default_value' => NULL,
@@ -446,9 +448,9 @@ function fond_commerce_field_default_field_instances() {
   t('Billede');
   t('Body');
   t('CPR-nummer');
-  t('To get a tax deduction, we need to report your SSN-number to the tax authorities.');
   t('Price');
   t('Product');
+  t('To get a tax deduction, we need to report your SSN-number to the tax authorities.');
 
   return $field_instances;
 }
