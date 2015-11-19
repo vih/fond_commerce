@@ -35,3 +35,11 @@ function fond_commerce_update_7000() {
 function fond_commerce_update_7001() {
   variable_set('commerce_customer_profile_billing_addressbook', TRUE);
 }
+
+/**
+ * Enable Commerce Billy.
+ */
+function fond_commerce_update_7002() {
+  module_enable(array('commerce_billy', 'commerce_billy_pdf'));
+  variable_set('commerce_billy_auto_invoice', 1);
+}
