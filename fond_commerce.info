@@ -18,7 +18,6 @@ dependencies[] = commerce_payment_ui
 dependencies[] = commerce_price
 dependencies[] = commerce_product_reference
 dependencies[] = commerce_product_ui
-dependencies[] = commerce_quickpay
 dependencies[] = commerce_reports
 dependencies[] = ctools
 dependencies[] = entity

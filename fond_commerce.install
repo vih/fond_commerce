@@ -40,5 +40,6 @@ function fond_commerce_update_7001() {
  * Enable Billys Billing.
  */
 function fond_commerce_update_7002() {
-  module_enable(array('commerce_billy'));
+  module_enable(array('commerce_billy', 'commerce_billy_pdf'));
+  variable_set('commerce_billy_auto_invoice', 1);
 }
