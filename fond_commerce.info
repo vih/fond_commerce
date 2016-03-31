@@ -67,7 +67,5 @@ features[variable][] = menu_parent_produkt
 features[variable][] = node_options_produkt
 features[variable][] = node_preview_produkt
 features[variable][] = node_submitted_produkt
-features[views_view][] = order_count
 features[views_view][] = produkter
-features[views_view][] = samlet_bel_b
 files[] = fond_commerce.migrate.inc
