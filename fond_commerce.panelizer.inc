@@ -21,8 +21,6 @@ function fond_commerce_panelizer_defaults() {
   $panelizer->css_id = '';
   $panelizer->css = '';
   $panelizer->pipeline = 'standard';
-  $panelizer->storage_id = 'node:donation:default';
-  $panelizer->storage_type = 'panelizer_default';
   $panelizer->contexts = array();
   $panelizer->relationships = array();
   $panelizer->access = array();
@@ -123,6 +121,8 @@ function fond_commerce_panelizer_defaults() {
   $display->content['new-924fcdd8-a8df-4f3f-9fbe-acb4a89bff7f'] = $pane;
   $display->panels['center'][2] = 'new-924fcdd8-a8df-4f3f-9fbe-acb4a89bff7f';
   $display->hide_title = PANELS_TITLE_FIXED;
+  $display->storage_id = 'node:donation:default';
+  $display->storage_type = 'panelizer_default';
   $display->title_pane = 'new-924fcdd8-a8df-4f3f-9fbe-acb4a89bff7f';
   $panelizer->display = $display;
   $export['node:donation:default'] = $panelizer;
