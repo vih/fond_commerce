@@ -21,6 +21,8 @@ function fond_commerce_panelizer_defaults() {
   $panelizer->css_id = '';
   $panelizer->css = '';
   $panelizer->pipeline = 'standard';
+  $panelizer->storage_id = 'node:donation:default';
+  $panelizer->storage_type = 'panelizer_default';
   $panelizer->contexts = array();
   $panelizer->relationships = array();
   $panelizer->access = array();
